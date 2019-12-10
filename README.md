@@ -22,3 +22,27 @@ Thresholding an image:
 Which means we are providing minimum and maximum threshold values of pixels. Means it will select the pixels with intensity provided by us .After applying threshold values we will get binary image and finally we are calculating nuclei(dots) in image using opencv library.Please refer the code.
 
 ![alt text](https://github.com/Krishna5996/An-Automatic-Nuclei-Cells-Counting-Approach-Using-Effective-Image-Processing-Methods/blob/master/images/binary.png)
+
+Morphological operations 
+
+Erosion :  we match our binary image(filter map) with structural component(filter) also known as kernel. Structural component  is a user defined matrix. In our project we have taken 3*3 matrix which contains all ones.
+creating filter map after applying filter on binary  image with following values is called as Erosion
+perfect match-1
+some match-0
+no match-0
+
+Dilation-creating filter map after applying filter on binary image with following values is called as dialation
+
+perfect match-1
+some match-1
+no match-0
+
+Opening- perform first Erosion then Dilation
+Closing-Perform first Dilation and then Erosion
+The output at this stage is opening image because we applied opening morphological operation
+
+![alt text]
+
+Finally, we are are calculating the number of nuclei  by using findContours() function which provided by OPenCV  library. The final output will be total number of nuclei.   You can find the code in below link.
+Thus, we have concluded the effectiveness of the proposed approach for automatic counting of nuclei cells from histological images.
+
